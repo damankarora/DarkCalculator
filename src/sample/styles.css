@@ -16,9 +16,10 @@
 .text-field{
     -fx-background-color: #3c3f41;
     -fx-text-fill: #afb1b3;
-    -fx-border-width: 2px;
+    -fx-padding: 2px;
+    /*-fx-border-width: 2px;
     -fx-border-color: white;
-    -fx-border-style: solid;
+    -fx-border-style: solid;*/
 
 }
 
