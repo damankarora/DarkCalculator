@@ -6,12 +6,12 @@
 <?import javafx.scene.control.TextField?>
 <GridPane fx:controller="sample.Controller"
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10" stylesheets="@styles.css" id="pane">
-    <TextField GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="5" fx:id="calculationField"/>
+    <TextField GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="5" fx:id="calculationField" alignment="TOP_RIGHT"/>
     <Button GridPane.rowIndex="1" GridPane.columnIndex="0" text="7" fx:id="button7" onAction="#inputEventHandler"/>
     <Button GridPane.rowIndex="1" GridPane.columnIndex="1" text="8" fx:id="button8" onAction="#inputEventHandler"/>
     <Button GridPane.rowIndex="1" GridPane.columnIndex="2" text="9" fx:id="button9" onAction="#inputEventHandler"/>
     <Button GridPane.rowIndex="1" GridPane.columnIndex="3" text="/" fx:id="buttonDivide" onAction="#inputEventHandler"/>
-    <Button GridPane.rowIndex="1" GridPane.columnIndex="4" text="mod" fx:id="buttonMod" onAction="#inputEventHandler"/>
+    <Button GridPane.rowIndex="1" GridPane.columnIndex="4" text="X" fx:id="buttonBack" onAction="#backSpaceHandler"/>
     <Button GridPane.rowIndex="2" GridPane.columnIndex="0" text="4" fx:id="button4" onAction="#inputEventHandler"/>
     <Button GridPane.rowIndex="2" GridPane.columnIndex="1" text="5" fx:id="button5" onAction="#inputEventHandler"/>
     <Button GridPane.rowIndex="2" GridPane.columnIndex="2" text="6" fx:id="button6" onAction="#inputEventHandler"/>
