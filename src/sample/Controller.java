@@ -123,24 +123,43 @@ public class Controller {
                 break;
             }
         }
-        String spiltter = String.valueOf(operator);
-        String[] operands = input.split("[-+*/]");
 
-        switch (operator){
-            case '+':
-                calculationField.setText(String.valueOf((useDoubles)?doubleAddition(operands[0], operands[1]):addition(operands[0], operands[1])));
-                break;
-            case '-':
-                calculationField.setText(String.valueOf((useDoubles)?doubleSubtract(operands[0], operands[1]):subtract(operands[0], operands[1])));
-                break;
-            case '*':
-                calculationField.setText(String.valueOf((useDoubles)?doubleMultiply(operands[0], operands[1]):multiply(operands[0], operands[1])));
-                break;
-            case '/':
-                calculationField.setText(String.valueOf((useDoubles)?doubleDivide(operands[0], operands[1]):divide(operands[0], operands[1])));
-                break;
-            default:
+        String[] operands = input.split("[-+*/]");
+        if(!useDoubles){
+            switch (operator){
+                case '+':
+                    calculationField.setText(String.valueOf(addition(operands[0], operands[1])));
+                    break;
+                case '-':
+                    calculationField.setText(String.valueOf(subtract(operands[0], operands[1])));
+                    break;
+                case '*':
+                    calculationField.setText(String.valueOf(multiply(operands[0], operands[1])));
+                    break;
+                case '/':
+                    calculationField.setText(String.valueOf(divide(operands[0], operands[1])));
+                    break;
+                default:
+            }
+        }else{
+            switch (operator){
+                case '+':
+                    calculationField.setText(String.valueOf(doubleAddition(operands[0], operands[1])));
+                    break;
+                case '-':
+                    calculationField.setText(String.valueOf(doubleSubtract(operands[0], operands[1])));
+                    break;
+                case '*':
+                    calculationField.setText(String.valueOf(doubleMultiply(operands[0], operands[1])));
+                    break;
+                case '/':
+                    calculationField.setText(String.valueOf(doubleDivide(operands[0], operands[1])));
+                    break;
+                default:
+            }
         }
+
+
     }
 
     private double squareRoot(String s){
@@ -149,12 +168,10 @@ public class Controller {
 
 
     private long addition(String a, String b){
-        System.out.println("Long addition");
         return Long.parseLong(a) + Long.parseLong(b);
     }
 
     private double doubleAddition(String a, String b){
-        System.out.println("Double addition");
         return Double.parseDouble(a)+Double.parseDouble(b);
     }
 
